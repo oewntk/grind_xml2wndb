@@ -1,0 +1,9 @@
+/target/
+
+/xml*/
+/xml*
+/wndb*/
+/wndb*
+**/_*/
+**/_*
+#**/*.xml
