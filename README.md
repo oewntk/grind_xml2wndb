@@ -15,9 +15,9 @@ See also [model](https://github.com/oewntk/model/blob/master/README.md).
 
 See also [fromxml](https://github.com/oewntk/fromxml/blob/master/README.md).
 
-See also [towndb](https://github.com/x-englishwordnet/towndb/blob/master/README.md).
+See also [towndb](https://github.com/oewntk/towndb/blob/master/README.md).
 
-See also [x-englishwordnet](https://github.com/x-englishwordnet) and [globalwordnet/english-wordnet](https://github.com/globalwordnet/english-wordnet).
+See also [oewntk](https://github.com/oewntk) and [globalwordnet/english-wordnet](https://github.com/globalwordnet/english-wordnet).
 
 ## Dataflow
 
@@ -43,7 +43,7 @@ grinds the WNDB database
 
 ## Maven Central
 
-		<groupId>io.github.x-englishwordnet</groupId>
+		<groupId>io.github.oewntk</groupId>
 		<artifactId>xml2wndb</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 
