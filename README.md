@@ -9,11 +9,11 @@
 
 This library reads a model from XML files and writes it to WNDB format.
 
-Project [grind_xml2wndb](https://github.com/x-englishwordnet/grind_xml2wndb)
+Project [grind_xml2wndb](https://github.com/oewntk/grind_xml2wndb)
 
-See also [model](https://github.com/x-englishwordnet/model/blob/master/README.md).
+See also [model](https://github.com/oewntk/model/blob/master/README.md).
 
-See also [fromxml](https://github.com/x-englishwordnet/fromxml/blob/master/README.md).
+See also [fromxml](https://github.com/oewntk/fromxml/blob/master/README.md).
 
 See also [towndb](https://github.com/x-englishwordnet/towndb/blob/master/README.md).
 
