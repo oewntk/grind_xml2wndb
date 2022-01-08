@@ -20,7 +20,12 @@ import java.io.IOException;
  */
 public class Grind
 {
-	// Argument switches processing
+	/**
+	 * Argument switches processing
+	 *
+	 * @param args command-line arguments
+	 * @return int[0]=flags, int[1]=next arg to process
+	 */
 	public static int[] flags(String[] args)
 	{
 		int[] result = new int[2];
