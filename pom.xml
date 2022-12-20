@@ -10,7 +10,7 @@
 
 	<groupId>io.github.oewntk</groupId>
 	<artifactId>xml2wndb</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<name>xml_to_wndb</name>
 	<description>Read XML Wordnet model and export it to WNDB files.</description>
 	<url>https://github.com/oewntk/grind_xml2wndb</url>
@@ -25,17 +25,17 @@
 		<dependency>
 			<groupId>io.github.oewntk</groupId>
 			<artifactId>model</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.2</version>
 		</dependency>
 		<dependency>
 			<groupId>io.github.oewntk</groupId>
 			<artifactId>fromxml</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.2</version>
 		</dependency>
 		<dependency>
 			<groupId>io.github.oewntk</groupId>
 			<artifactId>towndb</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.2</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
