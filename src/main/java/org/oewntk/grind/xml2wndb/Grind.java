@@ -43,15 +43,15 @@ public class Grind
 			}
 			else if ("-compat:pointer".equals(args[i])) // if left and is "-compat:pointer"
 			{
-				result[0] |= Flags.pointerCompat;
+				result[0] |= Flags.POINTER_COMPAT;
 			}
 			else if ("-compat:lexid".equals(args[i])) // if left and is "-compat:lexid"
 			{
-				result[0] |= Flags.lexIdCompat;
+				result[0] |= Flags.LEXID_COMPAT;
 			}
 			else if ("-compat:verbframe".equals(args[i])) // if left and is "-compat:verbframe"
 			{
-				result[0] |= Flags.verbFrameCompat;
+				result[0] |= Flags.VERBFRAME_COMPAT;
 			}
 			else
 			{
