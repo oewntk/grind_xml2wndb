@@ -1,16 +1,15 @@
 /*
  * Copyright (c) 2021-2021. Bernard Bou.
  */
+package org.oewntk.grind.xml2wndb
 
-package org.oewntk.grind.xml2wndb;
-
-import org.oewntk.model.Model;
-import org.oewntk.wndb.out.Flags;
-import org.oewntk.wndb.out.ModelConsumer;
-import org.oewntk.xml.in.Factory;
-
-import java.io.File;
-import java.io.IOException;
+import org.oewntk.grind.xml2wndb.Tracing.progress
+import org.oewntk.grind.xml2wndb.Tracing.start
+import org.oewntk.wndb.out.Flags
+import org.oewntk.wndb.out.ModelConsumer
+import org.oewntk.xml.`in`.Factory
+import java.io.File
+import java.io.IOException
 
 /**
  * Main class that generates the WN database in the WNDB format from WNDB format, as per wndb(5WN)
@@ -18,93 +17,88 @@ import java.io.IOException;
  * @author Bernard Bou
  * @see "https://wordnet.princeton.edu/documentation/wndb5wn"
  */
-public class Grind
-{
+object Grind {
+
 	/**
 	 * Argument switches processing
 	 *
 	 * @param args command-line arguments
 	 * @return int[0]=flags, int[1]=next arg to process
 	 */
-	public static int[] flags(String[] args)
-	{
-		int[] result = new int[2];
+	private fun flags(args: Array<String>): IntArray {
+		val result = IntArray(2)
 
-		int i = 0;
-		for (; i < args.length; i++)
-		{
-			if ("-traceTime".equals(args[i])) // if left and is "-traceTime"
+		var i = 0
+		while (i < args.size) {
+			if ("-traceTime" == args[i]) // if left and is "-traceTime"
 			{
-				Tracing.traceTime = true;
-			}
-			else if ("-traceHeap".equals(args[i])) // if left and is "-traceHeap"
+				Tracing.traceTime = true
+			} else if ("-traceHeap" == args[i]) // if left and is "-traceHeap"
 			{
-				Tracing.traceHeap = true;
-			}
-			else if ("-compat:pointer".equals(args[i])) // if left and is "-compat:pointer"
+				Tracing.traceHeap = true
+			} else if ("-compat:pointer" == args[i]) // if left and is "-compat:pointer"
 			{
-				result[0] |= Flags.POINTER_COMPAT;
-			}
-			else if ("-compat:lexid".equals(args[i])) // if left and is "-compat:lexid"
+				result[0] = result[0] or Flags.POINTER_COMPAT
+			} else if ("-compat:lexid" == args[i]) // if left and is "-compat:lexid"
 			{
-				result[0] |= Flags.LEXID_COMPAT;
-			}
-			else if ("-compat:verbframe".equals(args[i])) // if left and is "-compat:verbframe"
+				result[0] = result[0] or Flags.LEXID_COMPAT
+			} else if ("-compat:verbframe" == args[i]) // if left and is "-compat:verbframe"
 			{
-				result[0] |= Flags.VERBFRAME_COMPAT;
+				result[0] = result[0] or Flags.VERBFRAME_COMPAT
+			} else {
+				break
 			}
-			else
-			{
-				break;
-			}
+			i++
 		}
-		result[1] = i;
-		return result;
+		result[1] = i
+		return result
 	}
 
 	/**
 	 * Main entry point
 	 *
-	 * @param args command-line arguments [-compat:lexid] [-compat:pointer] yamlDir [outputDir]
+	 * @param args command-line arguments
+	 * ```
+	 * [-compat:lexid] [-compat:pointer] yamlDir [outputDir]
+	 * ```
 	 * @throws IOException io
 	 */
-	public static void main(String[] args) throws IOException
-	{
-		int[] flags = flags(args);
-		int iArg = flags[1];
+	@Throws(IOException::class)
+	@JvmStatic
+	fun main(args: Array<String>) {
+		val flags = flags(args)
+		val iArg = flags[1]
 
 		// Tracing
-		final long startTime = Tracing.start();
+		val startTime = start()
 
 		// Input
-		File inFile = new File(args[iArg]);
-		Tracing.psInfo.println("[Input] " + inFile.getAbsolutePath());
+		val inFile = File(args[iArg])
+		Tracing.psInfo.println("[Input] " + inFile.absolutePath)
 
 		// Input2
-		File inDir2 = new File(args[iArg + 1]);
-		Tracing.psInfo.println("[Input2] " + inDir2.getAbsolutePath());
+		val inDir2 = File(args[iArg + 1])
+		Tracing.psInfo.println("[Input2] " + inDir2.absolutePath)
 
 		// Output
-		File outDir = new File(args[iArg + 2]);
-		if (!outDir.exists())
-		{
-			//noinspection ResultOfMethodCallIgnored
-			outDir.mkdirs();
+		val outDir = File(args[iArg + 2])
+		if (!outDir.exists()) {
+			outDir.mkdirs()
 		}
-		Tracing.psInfo.println("[Output] " + outDir.getAbsolutePath());
+		Tracing.psInfo.println("[Output] " + outDir.absolutePath)
 
 		// Supply model
-		Tracing.progress("before model is supplied,", startTime);
-		Model model = new Factory(inFile, inDir2).get();
+		progress("before model is supplied,", startTime)
+		val model = Factory(inFile, inDir2).get()!!
 		//Tracing.psInfo.printf("[Model] %s%n%s%n%n", Arrays.toString(model.getSources()), model.info());
-		Tracing.progress("after model is supplied,", startTime);
+		progress("after model is supplied,", startTime)
 
 		// Consume model
-		Tracing.progress("before model is consumed,", startTime);
-		new ModelConsumer(outDir, flags[0]).grind(model);
-		Tracing.progress("after model is consumed,", startTime);
+		progress("before model is consumed,", startTime)
+		ModelConsumer(outDir, flags[0]).grind(model)
+		progress("after model is consumed,", startTime)
 
 		// End
-		Tracing.progress("total,", startTime);
+		progress("total,", startTime)
 	}
 }
