@@ -15,19 +15,15 @@ import java.util.*
  */
 object Tracing {
 
-	@JvmField
 	val psInfo: PrintStream = System.out
 	val psErr: PrintStream = System.err
 	private val psHeap: PrintStream = System.out
 	private val psTime: PrintStream = System.out
 
-	@JvmField
 	var traceHeap: Boolean = false
 
-	@JvmField
 	var traceTime: Boolean = false
 
-	@JvmStatic
 	fun start(): Long {
 		val startTime = System.currentTimeMillis()
 
@@ -39,7 +35,6 @@ object Tracing {
 		return startTime
 	}
 
-	@JvmStatic
 	fun progress(message: String?, startTime: Long) {
 		if (traceTime) {
 			val endTime = System.currentTimeMillis()
