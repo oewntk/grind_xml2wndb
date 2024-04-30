@@ -6,4 +6,4 @@
 /wndb*
 **/_*/
 **/_*
-#**/*.xml
+/dependency-reduced-pom.xml
