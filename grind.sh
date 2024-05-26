@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#
+# Copyright (c) 2024. Bernard Bou.
+#
+
 IN="$1"
 if [ -z "$1" ]; then
 	IN=xml/oewn.xml
@@ -19,4 +23,5 @@ fi
 mkdir -p "${OUTDIR}"
 echo "DIR:   "${OUTDIR}"" 1>&2;
 
-java -ea -jar oewn-grind-xml2wndb.jar "${IN}" "${IN2}" "${OUTDIR}"
+jar=target/xml2wndb-2.1.1-uber.jar
+java -ea -jar "${jar}" "${IN}" "${IN2}" "${OUTDIR}"

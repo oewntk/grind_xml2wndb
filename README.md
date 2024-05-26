@@ -17,7 +17,8 @@ See also [fromxml](https://github.com/oewntk/fromxml/blob/master/README.md).
 
 See also [towndb](https://github.com/oewntk/towndb/blob/master/README.md).
 
-See also [oewntk](https://github.com/oewntk) and [globalwordnet/english-wordnet](https://github.com/globalwordnet/english-wordnet).
+See also [oewntk](https://github.com/oewntk)
+and [globalwordnet/english-wordnet](https://github.com/globalwordnet/english-wordnet).
 
 ## Dataflow
 
