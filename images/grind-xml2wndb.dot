@@ -1,11 +1,11 @@
-digraph "io.github.oewntk:xml2wndb:jar:2.1.2" { 
-	"io.github.oewntk:xml2wndb:jar:2.1.2" -> "io.github.oewntk:model:jar:2.1.2:compile" ; 
-	"io.github.oewntk:xml2wndb:jar:2.1.2" -> "io.github.oewntk:fromxml:jar:2.1.2:compile" ; 
-	"io.github.oewntk:xml2wndb:jar:2.1.2" -> "io.github.oewntk:towndb:jar:2.1.2:compile" ; 
-	"io.github.oewntk:xml2wndb:jar:2.1.2" -> "junit:junit:jar:4.13.2:test" ; 
-	"io.github.oewntk:xml2wndb:jar:2.1.2" -> "org.jetbrains.kotlin:kotlin-stdlib:jar:1.9.23:compile" ; 
-	"io.github.oewntk:xml2wndb:jar:2.1.2" -> "org.jetbrains.kotlin:kotlin-test-junit:jar:1.9.23:test" ; 
-	"io.github.oewntk:model:jar:2.1.2:compile" -> "org.jetbrains.kotlinx:kotlinx-serialization-core:jar:1.6.3:compile" ; 
+digraph "io.github.oewntk:xml2wndb:jar:2.1.3" { 
+	"io.github.oewntk:xml2wndb:jar:2.1.3" -> "io.github.oewntk:model:jar:2.1.3:compile" ; 
+	"io.github.oewntk:xml2wndb:jar:2.1.3" -> "io.github.oewntk:fromxml:jar:2.1.3:compile" ; 
+	"io.github.oewntk:xml2wndb:jar:2.1.3" -> "io.github.oewntk:towndb:jar:2.1.3:compile" ; 
+	"io.github.oewntk:xml2wndb:jar:2.1.3" -> "junit:junit:jar:4.13.2:test" ; 
+	"io.github.oewntk:xml2wndb:jar:2.1.3" -> "org.jetbrains.kotlin:kotlin-stdlib:jar:1.9.23:compile" ; 
+	"io.github.oewntk:xml2wndb:jar:2.1.3" -> "org.jetbrains.kotlin:kotlin-test-junit:jar:1.9.23:test" ; 
+	"io.github.oewntk:model:jar:2.1.3:compile" -> "org.jetbrains.kotlinx:kotlinx-serialization-core:jar:1.6.3:compile" ; 
 	"org.jetbrains.kotlinx:kotlinx-serialization-core:jar:1.6.3:compile" -> "org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:jar:1.6.3:compile" ; 
 	"org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:jar:1.6.3:compile" -> "org.jetbrains.kotlin:kotlin-stdlib-common:jar:1.9.22:compile" ; 
 	"junit:junit:jar:4.13.2:test" -> "org.hamcrest:hamcrest-core:jar:1.3:test" ; 
