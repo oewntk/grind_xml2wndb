@@ -46,7 +46,7 @@ grinds the WNDB database
 
 		<groupId>io.github.oewntk</groupId>
 		<artifactId>xml2wndb</artifactId>
-		<version>2.3.1</version>
+		<version>2.3.2</version>
 
 ## Dependencies
 
