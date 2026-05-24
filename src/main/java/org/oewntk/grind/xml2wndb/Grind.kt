@@ -30,7 +30,9 @@ object Grind {
 
         var i = 0
         while (i < args.size) {
-            if ("-traceTime" == args[i]) // if left and is "-traceTime"
+            if ("-verbose" == args[i]) {
+                Tracing.verbose = true
+            } else if ("-traceTime" == args[i]) // if left and is "-traceTime"
             {
                 Tracing.traceTime = true
             } else if ("-traceHeap" == args[i]) // if left and is "-traceHeap"
@@ -89,13 +91,13 @@ object Grind {
 
         // Supply model
         progress("before model is supplied,", startTime)
-        val model = Factory(inFile, inDir2).get()!!
+        val model = Factory(inFile, inDir2, verbose = Tracing.verbose).get()!!
         //Tracing.psInfo.printf("[Model] %s%n%s%n%n", Arrays.toString(model.getSources()), model.info());
         progress("after model is supplied,", startTime)
 
         // Consume model
         progress("before model is consumed,", startTime)
-        ModelConsumer(outDir, flags[0]).grind(model)
+        ModelConsumer(outDir, flags[0],).grind(model)
         progress("after model is consumed,", startTime)
 
         // End
