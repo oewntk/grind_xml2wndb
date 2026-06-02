@@ -1,10 +1,13 @@
 /target/
 /build/
+
 /xml*/
 /xml*
 /wndb*/
 /wndb*
+
 **/_*/
 **/_*
 **/*.jar
+
 /dependency-reduced-pom.xml
