@@ -97,7 +97,7 @@ object Grind {
 
         // Consume model
         progress("before model is consumed,", startTime)
-        ModelConsumer(outDir, flags[0],).grind(model)
+        ModelConsumer(outDir, flags[0]).grind(model)
         progress("after model is consumed,", startTime)
 
         // End
