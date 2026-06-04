@@ -24,8 +24,6 @@ object Tracing {
 
     private val psTime: PrintStream = System.out
 
-    var verbose: Boolean = false
-
     var traceHeap: Boolean = false
 
     var traceTime: Boolean = false
